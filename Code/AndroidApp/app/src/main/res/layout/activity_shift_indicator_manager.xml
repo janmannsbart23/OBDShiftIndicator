@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:gauge="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#009688"
+    tools:context=".ShiftIndicatorManagerActivity">
+
+    <TextView
+        android:id="@+id/deviceNameTV"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="-"
+        android:textColor="?attr/colorBackgroundFloating"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/embeddedSoftwareVersionTV"
+        android:layout_width="379dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="-"
+        android:textColor="?attr/colorBackgroundFloating"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deviceNameTV" />
+
+    <TextView
+        android:id="@+id/connectionStateTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="BT Connection Status:"
+        android:textColor="?attr/colorBackgroundFloating"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="293dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="#00000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/embeddedSoftwareVersionTV">
+
+        <com.sccomponents.gauges.ScArcGauge xmlns:sc="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rpmGauge"
+            android:layout_width="240dp"
+            android:layout_height="150dp"
+            android:padding="10dp"
+            sc:angleStart="-180"
+            sc:angleSweep="135"
+            sc:notches="7"
+            sc:notchesColor="#ffffff"
+            sc:notchesPosition="inside"
+            sc:notchesSize="2dp"
+            sc:progressSize="15dp"
+            sc:strokeColors="white|white|white|white|white|white|red|red"
+            sc:strokeColorsMode="solid"
+            sc:strokeSize="2dp"
+            sc:textColor="#ffffff"
+            sc:textPosition="inside"
+            sc:textSize="12dp"
+            sc:textTokens="0|1|2|3|4|5|6"
+            sc:textUnbend="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/rpmTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#ffffff"
+                android:textSize="44dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="x1000/min"
+                android:textColor="#ffffff"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/engineOilframeLayout"
+        android:layout_width="293dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="#00000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+        <com.sccomponents.gauges.ScArcGauge
+            android:id="@+id/engineOilGauge"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:padding="10dp"
+            gauge:angleStart="-180"
+            gauge:angleSweep="180"
+            gauge:notches="7"
+            gauge:notchesColor="#ffffff"
+            gauge:notchesPosition="inside"
+            gauge:notchesSize="2dp"
+            gauge:progressSize="15dp"
+            gauge:strokeColors="red|red|white|white|white|white|red|red"
+            gauge:strokeColorsMode="solid"
+            gauge:strokeSize="2dp"
+            gauge:textColor="#ffffff"
+            gauge:textPosition="inside"
+            gauge:textSize="12dp"
+            gauge:textTokens="30|50|70|90|110|120|150"
+            gauge:textUnbend="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/engineOilTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#ffffff"
+                android:textSize="44dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="°C"
+                android:textColor="#ffffff"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/shifterActiveSaveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Save Brightness"
+        app:layout_constraintStart_toStartOf="@+id/brightnessSaveButton"
+        app:layout_constraintTop_toBottomOf="@+id/engineOilframeLayout" />
+
+    <Button
+        android:id="@+id/brightnessSaveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="Save Shifter Active"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shifterActiveSaveButton" />
+
+
+    <SeekBar
+        android:id="@+id/brightnessSeekBar"
+        style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+        android:layout_width="200dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FFFFFF"
+        android:colorControlActivated="#c51162"
+        android:max="255"
+        android:min="0"
+        android:progress="0"
+        android:progressBackgroundTint="#f4511e"
+        android:progressTint="#ffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shifterActiveSaveButton" />
+
+    <Switch
+        android:id="@+id/shifterActiveSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="Shifter Active:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/brightnessSaveButton" />
+
+</android.support.constraint.ConstraintLayout>

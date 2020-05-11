@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Shift Indicator</string>
+
+    <string-array name="infoDisplayModes">
+        <item>Off</item>
+        <item>RPM</item>
+        <item>Speed</item>
+        <item>Engine Oil</item>
+        <item>Engine Oil with auto. off</item>
+        <item>Throttle Position</item>
+        <item>Fuel Level</item>
+    </string-array>
+</resources>
