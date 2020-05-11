@@ -6,6 +6,8 @@ OBDShiftindicator is
   - Open Source
   - Developed as a hobby project 
 
+Video:
+
 [![Alt text](https://img.youtube.com/vi/m7eosfVUVjs/0.jpg)](https://www.youtube.com/watch?v=m7eosfVUVjs)
 
 ![](Pictures/Mini.jpg)
